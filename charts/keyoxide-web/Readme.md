@@ -1,4 +1,4 @@
-# Keyoxide     
+# Keyoxide Web    
 
 ## Prerequisites    
 - Kubernetes 1.12+     
@@ -9,7 +9,7 @@
 ## Installing the Chart      
 Clone this Repository       
 ```bash     
-$ git clone url      
+$ git clone https://github.com/itTrident/helm-charts.git      
 ```      
 
 
