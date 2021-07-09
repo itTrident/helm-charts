@@ -1,6 +1,23 @@
 apiVersion: v2
+kubeVersion: >= 1.12
 appVersion: 1.16.0
-description: A Helm chart for Kubernetes
-name: keyoxide
+description: A Helm chart for Keyoxide Web
+name: keyoxide-web
+home: https://keyoxide.org/
 type: application
 version: 0.1.0
+sources:
+  - https://codeberg.org/keyoxide/keyoxide-web
+maintainers:
+  - name: ajayvarma-ittrident
+    email: ajayvarma@tridentsqa.com
+  - name: srinivasan-ittrident
+    email: srinivasan@tridentsqa.com
+icon: https://codeberg.org/keyoxide/keyoxide-web/src/branch/main/static/img/logo_circle.png
+annotations:
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/itTrident/helm-charts/tree/main/charts/keyoxide-web
+    - name: Keyoxide
+      url: https://keyoxide.org
+ 
