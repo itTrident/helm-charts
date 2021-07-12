@@ -1,1 +1,33 @@
-
+apiVersion: v1
+entries:
+  keyoxide-web:
+  - annotations:
+      artifacthub.io/links: |-
+        - name: Chart Source
+          url: https://github.com/itTrident/helm-charts/tree/main/charts/keyoxide-web
+        - name: Keyoxide
+          url: https://keyoxide.org
+    apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-12T17:09:37.84711512+05:30"
+    description: 'Keyoxide allows you to prove ''ownership'' of accounts on websites,
+      domain names, IM, etc., regardless of your username. Keyoxide’s purpose is just
+      that: linking online properties together. Keyoxide uses an ''open source, decentralized
+      and cryptography-based approach to bidirectional linking''.'
+    digest: 0a6b901be64241ff135b6fd041bb7ad8527e53a118b40f252ed85bb899ebb220
+    home: https://keyoxide.org/
+    icon: https://codeberg.org/keyoxide/keyoxide-web/raw/branch/main/static/img/logo_circle.png
+    kubeVersion: '>= 1.12'
+    maintainers:
+    - email: ajayvarma@tridentsqa.com
+      name: ajayvarma-ittrident
+    - email: srinivasan@tridentsqa.com
+      name: srinivasan-ittrident
+    name: keyoxide-web
+    sources:
+    - https://codeberg.org/keyoxide/keyoxide-web
+    type: application
+    urls:
+    - https://ittrident.github.io/helm-charts/keyoxide-web-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-07-12T17:09:37.844007542+05:30"
