@@ -1,7 +1,7 @@
 apiVersion: v2
 kubeVersion: ">= 1.12"
 appVersion: 1.16.0
-description: A Helm chart for Keyoxide Web
+description: "Keyoxide allows you to prove 'ownership' of accounts on websites, domain names, IM, etc., regardless of your username. Keyoxide’s purpose is just that: linking online properties together. Keyoxide uses an 'open source, decentralized and cryptography-based approach to bidirectional linking'."
 name: keyoxide-web
 home: https://keyoxide.org/
 type: application
@@ -13,7 +13,7 @@ maintainers:
     email: ajayvarma@tridentsqa.com
   - name: srinivasan-ittrident
     email: srinivasan@tridentsqa.com
-icon: https://codeberg.org/keyoxide/keyoxide-web/src/branch/main/static/img/logo_circle.png
+icon: https://codeberg.org/keyoxide/keyoxide-web/raw/branch/main/static/img/logo_circle.png
 annotations:
   artifacthub.io/links: |
     - name: Chart Source

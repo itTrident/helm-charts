@@ -1,4 +1,6 @@
-# Keyoxide Web    
+# Keyoxide Web
+
+Keyoxide allows you to prove 'ownership' of accounts on websites, domain names, IM, etc., regardless of your username. Keyoxide’s purpose is just that: linking online properties together. Keyoxide uses an 'open source, decentralized and cryptography-based approach to bidirectional linking'.
 
 ## Prerequisites    
 - Kubernetes 1.12+     
