@@ -1,0 +1,57 @@
+replicaCount: 1
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+image:
+  repository: openproject/community
+  pullPolicy: IfNotPresent
+  tag: "11"
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+service:
+  type: LoadBalancer
+  port: 80
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  storageClassName: local-storage
+  size: 30Gi
+
+postgresql:
+  persistence:
+    enabled: false
+    size: 15G
+  postgresqlPassword: superSecrectPassword
+  postgresqlDatabase: openproject
+  user: postgres
+
+jobs:
+  run:
+    backoffLimit: 6
+    restartPolicy: Always

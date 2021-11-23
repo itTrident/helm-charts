@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "openproject.fullname" . }}-test-connection"
+  labels:
+    {{- include "openproject.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: {{ template "fullname" . }}-credentials-test
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      env: 
+        - name: HOST
+          value: {{ template "postgresql.fullname" . }}
+        - name: DATABASE_NAME
+          value: {{ default "openproject" .Values.postgresql.postgresqlDatabase | quote }}
+        - name: USER
+          value: {{ default "postgres" .Values.postgresql.user | quote }}
+        - name: PGPASSWORD
+          value: {{ default "postgres" .Values.postgresql.postgresqlPassword | quote }}
+      command: ["sh", "-c", "psql -U $USER -h $HOST -l"]
+  restartPolicy: Never
+
+
+
+
