@@ -30,4 +30,35 @@ entries:
     urls:
     - https://ittrident.github.io/helm-charts/keyoxide-web-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-12T17:09:37.844007542+05:30"
+  openproject:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/itTrident/helm-charts/tree/main/charts/openproject
+        - name: OpenProject
+          url: https://www.openproject.org/
+    apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-30T19:20:49.714216275Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.1.1
+    description: OpenProject is a web-based project management software
+    digest: 6836eda2cf67b801629390536aa88a3d249601fcf2a1d879b89715ef42e21a54
+    home: https://www.openproject.org/
+    icon: https://www.openproject.org/assets/images/press/openproject-logo-centered-blue-background-fa9d45bd.png
+    kubeVersion: '>= 1.12'
+    maintainers:
+    - email: ajayvarma@tridentsqa.com
+      name: ajayvarma-ittrident
+    - email: srinivasan@tridentsqa.com
+      name: srinivasan-ittrident
+    name: openproject
+    sources:
+    - https://github.com/opf/openproject
+    type: application
+    urls:
+    - https://github.com/itTrident/helm-charts/releases/download/openproject-0.1.0/openproject-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-11-30T19:20:49.714222076Z"
