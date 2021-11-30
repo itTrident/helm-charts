@@ -1,0 +1,22 @@
+apiVersion: v2
+kubeVersion: ">= 1.12"
+appVersion: "1.16.0"
+description: OpenProject is a web-based project management software
+name: openproject
+home: https://www.openproject.org/
+type: application
+version: 0.1.0
+sources:
+  - https://github.com/opf/openproject
+maintainers:
+  - name: ajayvarma-ittrident
+    email: ajayvarma@tridentsqa.com
+  - name: srinivasan-ittrident
+    email: srinivasan@tridentsqa.com
+icon: https://www.openproject.org/assets/images/press/openproject-logo-centered-blue-background-fa9d45bd.png
+annotations:
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/itTrident/helm-charts/tree/main/charts/openproject
+    - name: OpenProject
+      url: https://www.openproject.org/
