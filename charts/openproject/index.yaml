@@ -32,4 +32,7 @@ entries:
     urls:
     - charts/postgresql-9.1.1.tgz
     version: 9.1.1
+  openproject:
+    apiVersion: v1
+    created: "2021-06-07T10:19:25.023385166+05:30"
 generated: "2021-02-12T10:19:24.991901979+05:30"
