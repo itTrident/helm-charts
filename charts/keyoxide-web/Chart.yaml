@@ -5,7 +5,7 @@ description: "Keyoxide allows you to prove 'ownership' of accounts on websites, 
 name: keyoxide-web
 home: https://keyoxide.org/
 type: application
-version: 0.1.0
+version: 0.2.0
 sources:
   - https://codeberg.org/keyoxide/keyoxide-web
 maintainers:
