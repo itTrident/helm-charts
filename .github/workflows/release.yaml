@@ -28,7 +28,8 @@ jobs:
       - name: Add dependency chart repos
         run: |
           helm repo add ittrident https://ittrident.github.io/helm-charts
-
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+          
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
         env:
