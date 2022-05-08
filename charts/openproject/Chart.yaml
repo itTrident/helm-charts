@@ -9,8 +9,6 @@ version: 0.2.1
 sources:
   - https://github.com/opf/openproject
 maintainers:
-  - name: ajayvarma-ittrident
-    email: ajayvarma@tridentsqa.com
   - name: srinivasanbr
     email: brsrinivasan98@gmail.com
 icon: https://www.openproject.org/assets/images/press/openproject-logo-centered-blue-background-fa9d45bd.png
