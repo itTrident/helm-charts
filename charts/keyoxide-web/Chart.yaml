@@ -9,8 +9,6 @@ version: 0.2.0
 sources:
   - https://codeberg.org/keyoxide/keyoxide-web
 maintainers:
-  - name: ajayvarma-ittrident
-    email: ajayvarma@tridentsqa.com
   - name: srinivasanbr
     email: brsrinivasan98@gmail.com
 icon: https://codeberg.org/keyoxide/keyoxide-web/raw/branch/main/static/img/logo_circle.png
