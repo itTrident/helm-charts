@@ -2,6 +2,33 @@ apiVersion: v1
 entries:
   keyoxide-web:
   - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/itTrident/helm-charts/tree/main/charts/keyoxide-web
+        - name: Keyoxide
+          url: https://keyoxide.org
+    apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-27T11:08:48.027167157Z"
+    description: 'Keyoxide allows you to prove ''ownership'' of accounts on websites,
+      domain names, IM, etc., regardless of your username. Keyoxide’s purpose is just
+      that: linking online properties together. Keyoxide uses an ''open source, decentralized
+      and cryptography-based approach to bidirectional linking''.'
+    digest: 0d367aac4eba7ae628a3268e7481a43a2bd89e463500b56c90b5583824ee851a
+    home: https://keyoxide.org/
+    icon: https://codeberg.org/keyoxide/keyoxide-web/raw/branch/main/static/img/logo_circle.png
+    kubeVersion: '>= 1.12'
+    maintainers:
+    - email: brsrinivasan98@gmail.com
+      name: srinivasanbr
+    name: keyoxide-web
+    sources:
+    - https://codeberg.org/keyoxide/keyoxide-web
+    type: application
+    urls:
+    - https://github.com/itTrident/helm-charts/releases/download/keyoxide-web-0.2.1/keyoxide-web-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
       artifacthub.io/links: |-
         - name: Chart Source
           url: https://github.com/itTrident/helm-charts/tree/main/charts/keyoxide-web
@@ -31,6 +58,34 @@ entries:
     - https://ittrident.github.io/helm-charts/keyoxide-web-0.1.0.tgz
     version: 0.1.0
   openproject:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/itTrident/helm-charts/tree/main/charts/openproject
+        - name: OpenProject
+          url: https://www.openproject.org/
+    apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-27T11:08:48.306292518Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.16.2
+    description: OpenProject is a web-based project management software
+    digest: 6a64322aedccc4f7c2d514c1e0d5bd98ed3a6bf75c7a5a36cb59b1480ba17408
+    home: https://www.openproject.org/
+    icon: https://www.openproject.org/assets/images/press/openproject-logo-centered-blue-background-fa9d45bd.png
+    kubeVersion: '>= 1.12'
+    maintainers:
+    - email: brsrinivasan98@gmail.com
+      name: srinivasanbr
+    name: openproject
+    sources:
+    - https://github.com/opf/openproject
+    type: application
+    urls:
+    - https://github.com/itTrident/helm-charts/releases/download/openproject-0.2.1/openproject-0.2.1.tgz
+    version: 0.2.1
   - annotations:
       artifacthub.io/links: |
         - name: Chart Source
@@ -91,4 +146,4 @@ entries:
     urls:
     - https://github.com/itTrident/helm-charts/releases/download/openproject-0.1.0/openproject-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-02T14:30:08.093224016Z"
+generated: "2022-10-27T11:08:48.306313018Z"
