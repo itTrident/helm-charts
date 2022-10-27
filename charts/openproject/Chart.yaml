@@ -20,5 +20,5 @@ annotations:
       url: https://www.openproject.org/
 dependencies:
 - name: postgresql
-  version: "9.1.1"
+  version: ~9.1.1
   repository: "https://charts.bitnami.com/bitnami/postgresql"
