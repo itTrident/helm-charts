@@ -11,7 +11,7 @@ sources:
 maintainers:
   - name: srinivasanbr
     email: brsrinivasan98@gmail.com
-icon: https://codeberg.org/keyoxide/keyoxide-web/raw/branch/main/static/img/logo_circle.png
+icon: https://codeberg.org/keyoxide/keyoxide-web/src/branch/main/static-src/files/img/logo_circle.png
 annotations:
   artifacthub.io/links: |
     - name: Chart Source
