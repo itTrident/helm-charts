@@ -5,7 +5,7 @@ description: OpenProject is a web-based project management software
 name: openproject
 home: https://www.openproject.org/
 type: application
-version: 0.2.1
+version: 0.2.3
 sources:
   - https://github.com/opf/openproject
 maintainers:
