@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "{{ .Values.cassandra.name }}"
+  labels:
+    app: "{{ .Values.cassandra.app }}"
+spec:
+  serviceName: cassandra
+  replicas: {{ .Values.cassandra.replicaCount }}
+  selector:
+    matchLabels:
+      app:  "{{ .Values.cassandra.app }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.cassandra.app }}"
+    spec:
+      terminationGracePeriodSeconds: 1800
+      containers:
+        - name: "{{ .Values.cassandra.name }}"
+          image: "{{ .Values.cassandra.image }}:{{ .Values.cassandra.tag }}"
+          imagePullPolicy: "{{ .Values.cassandra.imagePullPolicy }}"
+          ports:
+            - containerPort: 7000
+              name: intra-node
+            - containerPort: 7001
+              name: tls-intra-node
+            - containerPort: 7199
+              name: jmx
+            - containerPort: 9042
+              name: cql
+          resources:
+            limits:
+              cpu: "500m"
+              memory: 1Gi
+            requests:
+              cpu: "500m"
+              memory: 1Gi
+          securityContext:
+            capabilities:
+              add:
+                - IPC_LOCK
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/sh
+                  - -c
+                  - nodetool drain
+          env:
+            - name:  MAX_HEAP_SIZE
+              value: {{ .Values.cassandra.MAX_HEAP_SIZE | quote }}
+            - name:  HEAP_NEWSIZE
+              value: {{ .Values.cassandra.HEAP_NEWSIZE | quote }}
+            - name:  CASSANDRA_CLUSTER_NAME
+              value: {{ .Values.cassandra.CASSANDRA_CLUSTER_NAME | quote }}  
+            - name:  CASSANDRA_DC
+              value: {{ .Values.cassandra.CASSANDRA_DC | quote }}  
+            - name:  CASSANDRA_RACK
+              value: {{ .Values.cassandra.CASSANDRA_RACK | quote }}
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          
+          volumeMounts:
+            - name: cassandra-data
+              mountPath: /var/lib/cassandra
+      volumes:
+        - name: cassandra-data
+          emptyDir: {}
