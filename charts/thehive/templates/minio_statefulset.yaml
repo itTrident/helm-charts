@@ -29,7 +29,7 @@ spec:
               value: {{ .Values.minio.MINIO_ROOT_PASSWORD | quote }}
 
           ports:
-            - containerPort: 9090
+            - containerPort: 9000
               name: http
           resources:
             limits:
@@ -38,6 +38,7 @@ spec:
             requests:
               cpu: "500m"
               memory: 256Mi
+
           volumeMounts:
             - name: s3-data
               mountPath: /data
