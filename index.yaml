@@ -201,4 +201,15 @@ entries:
     urls:
     - https://github.com/itTrident/helm-charts/releases/download/openproject-0.1.0/openproject-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-08T14:37:15.131835815Z"
+  thehive:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-05-05T16:28:13.644975688Z"
+    description: A Helm chart for Kubernetes
+    digest: 05e73bd2e2bbc630cf303655bcb3ff7bd3d3e5d52a55b438a40694f781a102cf
+    name: thehive
+    type: application
+    urls:
+    - https://github.com/itTrident/helm-charts/releases/download/thehive-0.1.0/thehive-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-05T16:28:13.644988988Z"
