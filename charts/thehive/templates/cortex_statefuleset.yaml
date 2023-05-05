@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "{{ .Values.cortex.name }}"
+  labels:
+    app: "{{ .Values.cortex.app }}"
+spec:
+  serviceName: cortex
+  replicas: {{ .Values.cortex.replicaCount }}
+  selector:
+    matchLabels:
+      app: "{{ .Values.cortex.app }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.cortex.app }}"
+    spec:
+      terminationGracePeriodSeconds: 1800
+      containers:
+        - name: "{{ .Values.cortex.name }}"
+          image: "{{ .Values.cortex.image }}:{{ .Values.cortex.tag }}"
+          imagePullPolicy: "{{ .Values.cortex.imagePullPolicy }}"
+
+          env:
+            - name: job_directory
+              value: /tmp/cortex-jobs
+            
+
+          ports:
+            - containerPort: 9001
+              name: http
+          resources:
+            limits:
+              cpu: "500m"
+              memory: 512Mi
+            requests:
+              cpu: "500m"
+              memory: 256Mi
+          volumeMounts:
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+            - name: cortex-jobs
+              mountPath: /tmp/cortex-jobs
+      volumes:
+        - name: docker-sock
+          emptyDir: {}
+        - name: cortex-jobs
+          emptyDir: {} 

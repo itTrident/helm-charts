@@ -1,0 +1,68 @@
+cassandra: 
+  name: cassandra
+  app: cassandra
+
+  image:  cassandra 
+  imagePullPolicy: IfNotPresent
+  tag: "4.0"
+
+  replicaCount: 1
+
+  MAX_HEAP_SIZE: 512M
+  HEAP_NEWSIZE: 100M
+  CASSANDRA_CLUSTER_NAME: "TheHive"
+  CASSANDRA_DC: "DC1-TheHive"
+  CASSANDRA_RACK: "Rack1-TheHive"
+
+elasticsearch:
+  name: elasticsearch
+  app: elasticsearch
+
+  image: docker.elastic.co/elasticsearch/elasticsearch
+  imagePullPolicy: IfNotPresent
+  tag: "7.17.1"  
+
+  ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+
+  replicaCount: 1
+
+
+minio:
+  name: minio
+  app: minio
+
+  image: quay.io/minio/minio
+  imagePullPolicy: IfNotPresent
+  tag: "latest"
+  
+  type: LoadBalancer
+
+  MINIO_ROOT_USER: "minioadmin"
+  MINIO_ROOT_PASSWORD: "minioadmin"  
+
+  replicaCount: 1
+
+thehive:
+  app: thehive
+  name: thehive  
+
+  image: strangebee/thehive
+  imagePullPolicy: IfNotPresent
+  tag: "latest"
+ 
+  type: LoadBalancer
+
+  replicaCount: 1
+
+
+cortex:
+  app: cortex
+  name: cortex
+
+  image: thehiveproject/cortex
+  imagePullPolicy: IfNotPresent
+  tag: "3.1.7"
+
+  type: LoadBalancer
+
+  replicaCount: 1

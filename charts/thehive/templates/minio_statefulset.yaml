@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "{{ .Values.minio.name }}"
+  labels:
+    app: "{{ .Values.minio.app }}"
+spec:
+  serviceName: minio
+  replicas: {{ .Values.minio.replicaCount }}
+  selector:
+    matchLabels:
+      app: "{{ .Values.minio.app }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.minio.app }}"
+    spec:
+      terminationGracePeriodSeconds: 1800
+      containers:
+        - name: "{{ .Values.minio.name }}"
+          image: "{{ .Values.minio.image }}:{{ .Values.minio.tag }}"
+          command: ["minio", "server", "/data", "--console-address", ":9090"]
+          imagePullPolicy: "{{ .Values.minio.imagePullPolicy }}"
+
+          env:
+            - name: MINIO_ROOT_USER
+              value: {{ .Values.minio.MINIO_ROOT_USER | quote }}
+            - name: MINIO_ROOT_PASSWORD
+              value: {{ .Values.minio.MINIO_ROOT_PASSWORD | quote }}
+
+          ports:
+            - containerPort: 9000
+              name: http
+          resources:
+            limits:
+              cpu: "500m"
+              memory: 512Mi
+            requests:
+              cpu: "500m"
+              memory: 256Mi
+
+          volumeMounts:
+            - name: s3-data
+              mountPath: /data
+      volumes:
+        - name: s3-data
+          emptyDir: {}
