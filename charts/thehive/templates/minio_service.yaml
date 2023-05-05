@@ -5,7 +5,12 @@ metadata:
     app: "{{ .Values.minio.app }}"
   name: "{{ .Values.minio.name }}"
 spec:
+  type: "{{ .Values.minio.type }}"
   ports:
-    - port: 9001
+    - name: console
+      port: 9090
+    - name: s3-api
+      port: 9000  
+      
   selector:
     app: "{{ .Values.minio.app }}"

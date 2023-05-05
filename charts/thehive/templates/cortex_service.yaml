@@ -5,6 +5,7 @@ metadata:
     app: "{{ .Values.cortex.app }}"
   name: "{{ .Values.cortex.name }}"
 spec:
+  type: "{{ .Values.cortex.type }}"
   ports:
     - port: 9001
   selector:

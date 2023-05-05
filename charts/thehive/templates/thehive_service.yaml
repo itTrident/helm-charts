@@ -5,9 +5,9 @@ metadata:
     app: "{{ .Values.thehive.app }}"
   name: "{{ .Values.thehive.name }}"
 spec:
-  type: NodePort
+  type: "{{ .Values.thehive.type }}"
   ports:
     - port: 9000
-      nodePort: 30001
+      # nodePort: 30001
   selector:
     app: "{{ .Values.thehive.app }}"

@@ -19,7 +19,7 @@ spec:
       containers:
         - name: "{{ .Values.minio.name }}"
           image: "{{ .Values.minio.image }}:{{ .Values.minio.tag }}"
-          command: ["minio", "server", "/data", "--console-address", ":9001"]
+          command: ["minio", "server", "/data", "--console-address", ":9090"]
           imagePullPolicy: "{{ .Values.minio.imagePullPolicy }}"
 
           env:
