@@ -7,6 +7,6 @@ metadata:
 spec:
   type: "{{ .Values.cortex.type }}"
   ports:
-    - port: 9001
+    - port: {{ .Values.cortex.service.port}}
   selector:
     app: "{{ .Values.cortex.app }}"

@@ -49,9 +49,11 @@ thehive:
   image: strangebee/thehive
   imagePullPolicy: IfNotPresent
   tag: "latest"
+
+  service:
+    port: 9000  
  
   type: LoadBalancer
-
   replicaCount: 1
 
 
@@ -63,6 +65,9 @@ cortex:
   imagePullPolicy: IfNotPresent
   tag: "3.1.7"
 
-  type: LoadBalancer
-
+  service:
+    port: 9001
+    
   replicaCount: 1
+  type: LoadBalancer
+          
