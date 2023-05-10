@@ -46,8 +46,26 @@ To uninstall/delete the `my-release` deployment:
 The command removes all the Kubernetes components associated with the chart and deletes the release.      
 
 ```bash     
-$ helm delete my-release      
-```      
+$ helm delete my-release  
+```    
+## How to expose the application?
+Here application has been exposed using each Load Balancer for each application
+
+- Cortex
+```
+<LoadBalancer_endpoint>:9001
+```
+- Minio
+```
+<LoadBalancer_endpoint>:9090
+```
+
+- TheHive
+```
+<LoadBalancer_endpoint>:9000
+```
+> **Info**: If you want to use `Single Load Balancer` you can configure by yourself
+
 ## Parameters       
 
 ### Image parameters     

@@ -35,7 +35,7 @@ minio:
   imagePullPolicy: IfNotPresent
   tag: "latest"
   
-  type: ClusterIP
+  type: LoadBalancer
 
   MINIO_ROOT_USER: "minioadmin"
   MINIO_ROOT_PASSWORD: "minioadmin"  
@@ -53,7 +53,7 @@ thehive:
   service:
     port: 9000  
  
-  type: ClusterIP
+  type: LoadBalancer
   replicaCount: 1
 
 
@@ -69,4 +69,4 @@ cortex:
     port: 9001
     
   replicaCount: 1
-  type: ClusterIP    
+  type: LoadBalancer    
