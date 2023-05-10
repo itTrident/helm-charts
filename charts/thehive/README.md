@@ -66,7 +66,27 @@ Here application has been exposed using each Load Balancer for each application
 ```
 > **Info**: If you want to use `Single Load Balancer` you can configure by yourself
 
-## Parameters       
+## Steps to install LoadBalancer
+### Step 1:
+Install the required Ingress controller using helm
+
+### Step 2:
+Create an [Ingress Yaml](https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-3-nginx-ingress-controller/) file and configure it for external access and deploy it
+
+### Step 3:
+Get your Ingress resource using the below command
+```
+Kubectl get ingress -n <Name_spcae>
+```
+Expose your application with their respective paths
+
+Example:
+```
+http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/cortex
+```
+
+
+# Parameters       
 
 ### Image parameters     
 | Name | Description | Value |      
