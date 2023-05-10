@@ -7,7 +7,6 @@ metadata:
 spec:
   type: "{{ .Values.thehive.type }}"
   ports:
-    - port: 9000
-      # nodePort: 30001
+    - port: {{ .Values.thehive.service.port }}
   selector:
     app: "{{ .Values.thehive.app }}"

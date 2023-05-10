@@ -46,9 +46,50 @@ To uninstall/delete the `my-release` deployment:
 The command removes all the Kubernetes components associated with the chart and deletes the release.      
 
 ```bash     
-$ helm delete my-release      
-```      
-## Parameters       
+$ helm delete my-release  
+```    
+## How to expose the application?
+Here application has been exposed using each AWS Load Balancer for each application
+
+- Cortex
+```
+<LoadBalancer_endpoint>:9001
+```
+- Minio
+```
+<LoadBalancer_endpoint>:9090
+```
+
+- TheHive
+```
+<LoadBalancer_endpoint>:9000
+```
+> **Info**: If you want to use AWS  `Single LoadBalancer` you can configure by yourself
+
+## Steps to install Ingress controller and configure AWS Load Balancer
+
+### Step 1:
+Install the required Ingress controller using helm
+
+### Step 2:
+Create an [Ingress Yaml](https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-3-nginx-ingress-controller/) file and configure it for external access and deploy it
+
+### Step 3:
+Get your Ingress resource using the below command
+```
+Kubectl get ingress -n <Name_space>
+```
+Expose your application with their respective paths
+
+Example:
+```
+http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/cortex
+http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/minio
+http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/thehive
+```
+
+
+# Parameters       
 
 ### Image parameters     
 | Name | Description | Value |      
