@@ -49,7 +49,7 @@ The command removes all the Kubernetes components associated with the chart and 
 $ helm delete my-release  
 ```    
 ## How to expose the application?
-Here application has been exposed using each Load Balancer for each application
+Here application has been exposed using each AWS Load Balancer for each application
 
 - Cortex
 ```
@@ -64,9 +64,10 @@ Here application has been exposed using each Load Balancer for each application
 ```
 <LoadBalancer_endpoint>:9000
 ```
-> **Info**: If you want to use `Single Load Balancer` you can configure by yourself
+> **Info**: If you want to use AWS  `Single LoadBalancer` you can configure by yourself
 
-## Steps to install LoadBalancer
+## Steps to install Ingress controller and configure AWS Load Balancer
+
 ### Step 1:
 Install the required Ingress controller using helm
 
@@ -76,13 +77,15 @@ Create an [Ingress Yaml](https://aws.amazon.com/blogs/containers/exposing-kubern
 ### Step 3:
 Get your Ingress resource using the below command
 ```
-Kubectl get ingress -n <Name_spcae>
+Kubectl get ingress -n <Name_space>
 ```
 Expose your application with their respective paths
 
 Example:
 ```
 http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/cortex
+http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/minio
+http://a3f7eb93430dxxxxxxxxxxx-xxxxxxxx.us-east-1.elb.amazonaws.com/thehive
 ```
 
 
